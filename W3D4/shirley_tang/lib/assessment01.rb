@@ -40,10 +40,11 @@ end
 # is 1!, the 3rd factorial is 2!, etc.
 
 def factorials_rec(num)
-  return [1] if num<=0
+  return [1] if num==1
+  return [1,1] if num==2
   
   
-  factorials_rec(num-1)<<num*factorials_rec(num-1)[-1]
+  factorials_rec(num-1)<<(num-1)*factorials_rec(num-1)[-1]
 end
 
 class Array
@@ -94,6 +95,7 @@ class Array
   # implementation.**
   
   def merge_sort(&prc)
+    prc ||= Proc.new{|a,b| a<=>b}
     return self if self.length<=1
     
     middle=self.length/2
@@ -101,16 +103,16 @@ class Array
     left_half=self[0...middle]
     right_half=self[middle..-1]
 
-    left=self.merge_sort(&prc)
-    right=self.merge_sort(&prc)
+    left=left.merge_sort(&prc)
+    right=right.merge_sort(&prc)
 
-    Array.merge(left,right,prc)
+    Array.merge(left,right,&prc)
 
   end
 
   private
-  def self.merge(left, right, prc)
-    prc ||= Proc.new{|a,b| a<=>b}
+  def self.merge(left, right, &prc)
+   
     merged_list=[]
 
    until left.empty? || right.empty?

@@ -6,8 +6,7 @@ class Array
 
   def merge_sort(&prc)
     prc ||= Proc.new{ |a,b| a<=>b }
-    return [] if self.length==0
-    return self if self.length==1
+    return self if self.length<=1
     middle=self.length/2
 
     left= self[0...middle]
@@ -17,7 +16,7 @@ class Array
     sorted_right= right.merge_sort(&prc)
 
     Array.merge(sorted_left,sorted_right,&prc)
-
+    
   
   end
 
@@ -25,19 +24,22 @@ class Array
   def self.merge(left, right, &prc)
     merge_list=[]
 
-    unless left.empty? || right.empty?
-      if prc.call(left.first,right.first)==-1
-        merge_list<<left.shift
-      elsif prc.call(left.first,right.first)==0
-        merge_list<<left.shift
-        merge_list<<right.shift
+    merged = []
+
+    until left.empty? || right.empty?
+      if prc.call(left.first, right.first)==-1
+        merged << left.shift
+      elsif prc.call(left.first, right.first)==0
+        merged << left.shift
       else
-        merge_list<<right.shift
+        merged << right.shift
       end
-      
     end
 
-    merge_list+left+right
+    merged.concat(left)
+    merged.concat(right)
+
+    merged
   end
 end
 
@@ -79,15 +81,20 @@ class Array
   # [["a"], "b", ["c", "d", ["e"]]].my_flatten(1) = ["a", "b", "c", "d", ["e"]]
 
   def my_flatten(level = nil)
-    return self if level=0
-    flattened=[]
-    self.each do |el|
-      if el.is_a?(Array)
-        flattened += el.my_flatten(level)
+    flattened = []
+
+    self.each do |ele|
+      if ele.is_a?(Array) && level != 0
+        if level==nil
+          flattened+=ele.my_flatten
+        else
+          flattened+=ele.my_flatten(level-1)
+        end
       else
-        flattened<<el
+        flattened << ele
       end
     end
+
     flattened
   end
 end
