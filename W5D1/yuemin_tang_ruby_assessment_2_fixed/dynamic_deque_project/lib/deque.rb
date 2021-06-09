@@ -4,7 +4,6 @@ class Deque
     end
     
     def size
-        return 0 if @concealed_array.nil?
         @concealed_array.length
     end
 
