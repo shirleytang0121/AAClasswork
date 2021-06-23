@@ -1,0 +1,15 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.login {
+    margin: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    background-color:rgb(147, 129, 212);
+}

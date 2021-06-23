@@ -1,0 +1,11 @@
+<form action="<%=albums_url%>" method="POST" >
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for="album_title">Title: </label>
+    <input type="text" name="album[title]" id="album_title" value="<%=@album.title%>">
+    <br>
+     <label for="album_yr">Year: </label>
+    <input type="text" name="album[yr]" id="album_yr" value="<%=@album.yr%>">
+     <label for="album_designate">designate: </label>
+    <input type="text" name="album[designate]" id="album_designate" value="<%=@album.yr%>">
+    <input type="submit" value="crete">
+</form>
