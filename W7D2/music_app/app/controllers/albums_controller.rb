@@ -4,26 +4,25 @@ class AlbumsController < ApplicationController
         if @album
             render :show
         else
-            redirect_to albums_url
+            redirect_to album_url(@album)
         end
     end
 
     def new
-        @album = Album.new
+        @band =Band.find(params[:band_id])
+        @album = Album.new(band_id: params[:band_id])
         render :new
     end
 
     def create
-        if params.has_key?(:band_id)
-            @album = Album.new(title: params[:title],yr:params[:yr],designate:params[:designate],band_id:params[:band_id] )
-        else
-            render :new
-        end
-
+       @album = Album.new(params.require(:album).permit(:title,:yr,:band_id,:designate,:band))
+        @album.band_id = params[:band_id]
         if @album.save
-            redirect_to albums_url
+            redirect_to band_url(params[:band_id])
         else
-            render :new
+            # flash.now[:errors] = @album.errors.full_messages
+            # render :new
+            render json:@album.errors.full_messages, status:422
         end
     end
 
