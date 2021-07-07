@@ -1,0 +1,3 @@
+
+
+// spacerock inherits from MovingObject

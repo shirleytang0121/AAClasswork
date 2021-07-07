@@ -1,0 +1,5 @@
+
+
+
+// innherits from MovingObject
+
