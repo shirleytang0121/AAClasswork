@@ -1,0 +1,96 @@
+
+html {
+  box-sizing: border-box;
+  background: #A9DBB8;
+  text-align: center;
+}
+
+h1 {
+  color: #F0F2EF;
+  font-family: 'helvetica neue';
+  font-size: 20px;
+  font-weight: 200;
+  text-shadow: 1px 1px black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.welcome {
+  font-weight: 400;
+  margin-top: 100px;
+}
+
+/*  Phase 4: Slide In & Out Classes */
+
+.align-left {
+  float: left;
+  margin-right: 20px;
+}
+
+.align-right {
+  float: right;
+  margin-left: 20px;
+}
+
+.slide {
+  opacity: 0;
+  transition: all .5s;
+}
+
+.align-left.slide {
+  transform: translateX(-30%) scale(0.95);
+}
+
+.align-right.slide {
+  transform: translateX(30%) scale(0.95);
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0%) scale(1);
+}
+
+.drop-down-dog-list ul {
+  display: none;
+}
+
+#party {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+}
+
+.clock-holder {
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+}
+
+#clock {
+  color: white;
+  text-shadow: 0.5px 0.5px black;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.drop-down-dog-nav {
+  border: 1px solid white;
+  border-radius: 15px;
+  width: 250px;
+  height: 100px;
+  color: white;
+  text-shadow: 0.5px 0.5px black;
+  font-size: 25px;
+}
+
+.drop-down-dog-nav:hover .drop-down-dog-list {
+  background-color: white;
+}

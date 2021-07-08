@@ -1,0 +1,33 @@
+#game {
+    display: flex;
+    justify-content: center;
+}
+
+#game ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+}
+
+#game ul li {
+    border: 1px solid white;
+    padding: 50px;
+    background-color: gray;
+}
+
+#game ul li:hover {
+    background-color: yellow;
+}
+
+ul {
+    list-style: none;
+}
+
+#game ul li.marked {
+    background-color: white;
+    padding: 41px 44.2px;
+}
+
+body {
+    text-align: center;
+}
