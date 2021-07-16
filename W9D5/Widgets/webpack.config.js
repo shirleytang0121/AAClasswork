@@ -1,4 +1,4 @@
-const path = require('path') // require a module that has methods to get us a directory
+const path = require('path'); // require a module that has methods to get us a directory
 
 module.exports = {
   entry: './frontend/widgets.jsx', // specify where does webpack look?

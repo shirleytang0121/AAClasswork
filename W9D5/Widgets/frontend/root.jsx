@@ -1,8 +1,9 @@
 import React from "react";
+import Clock from "./clock";
 
 const Root = (props) =>{
     return (
-        <div><p>hello</p></div>
+        <div><Clock/></div>
     )
 }
 
