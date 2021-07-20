@@ -15,6 +15,22 @@ const initialState = {
   }
 };
 
+
+const newTodos = [
+  {
+   id: 1,
+   title: "wash bike",
+   body: "with soap",
+   done: false
+ },
+ {
+   id: 2,
+   title: "wash cat",
+   body: "with shampoo",
+   done: true
+ }
+];
+
 const todosReducer = (state = initialState, action) => {
   Object.freeze(state);
   const nextState = Object.assign({}, state);
