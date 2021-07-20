@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import { receiveTodo, receiveTodos } from './actions/todo_actions';
+import { receiveTodo, receiveTodos, removeTodo } from './actions/todo_actions';
+import { receiveStep, receiveSteps, removeStep } from './actions/step_actions';
 
 function Root() {
   return (
@@ -17,4 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.receiveTodo = receiveTodo;
   window.receiveTodos = receiveTodos;
+  window.removeTodo = removeTodo;
+  window.receiveStep = receiveStep;
+  window.receiveSteps = receiveSteps;
+  window.removeStep = removeStep;
 });
