@@ -5,6 +5,7 @@ import Root from '../frontend/components/root'
 
 import { receiveTodo, receiveTodos, removeTodo } from './actions/todo_actions';
 import { receiveStep, receiveSteps, removeStep } from './actions/step_actions';
+import allTodos from './reducers/selectors'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,4 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.receiveStep = receiveStep;
   window.receiveSteps = receiveSteps;
   window.removeStep = removeStep;
+  window.allTodos = allTodos;
 });
