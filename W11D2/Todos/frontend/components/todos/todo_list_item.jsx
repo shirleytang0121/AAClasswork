@@ -24,13 +24,13 @@ export default class TodoListItem extends React.Component {
   render() {
     return (
       <li>
-        <div>
+        <div className='todo-list-item'>
           <div onClick={this.handleShow}>{this.props.todo.title}</div>
           <button onClick={this.toggleDone}>
             {this.props.todo.done ? "Undo" : "Done"}
           </button>
-          {this.state.detail ? <TodoDetailViewContainer todo={this.props.todo} /> : null}
         </div>
+          {this.state.detail ? <TodoDetailViewContainer todo={this.props.todo} /> : null}
       </li>
     );
   }

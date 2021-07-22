@@ -37,7 +37,6 @@ export default class TodoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <h2>Add Todos</h2>
         <label>
           Title
           <input type="text" name="title" value={this.state.title} onChange={this.updateTitle} />
