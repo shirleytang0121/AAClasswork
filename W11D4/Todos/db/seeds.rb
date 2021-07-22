@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Todo.destroy_all
 
-Todo.create!(Tile: 'Do Full Stack Project', body: 'help', done: false)
-Todo.create!(Tile: 'Eat Dinner', body: 'yummy', done: false)
-Todo.create!(Tile: 'Go Sleep', body: 'zzzzz', done: false)
-
+Todo.create!(title: 'Do Full Stack Project', body: 'help', done: false)
+Todo.create!(title: 'Eat Dinner', body: 'yummy', done: false)
+Todo.create!(title: 'Go Sleep', body: 'zzzzz', done: false)

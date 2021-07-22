@@ -30,8 +30,9 @@ class Api::TodosController < ApplicationController
     def destroy
         @todo = Todo.find(params[:id])
         @todo.destroy
-        # render json: null
-        redirect_to root_url
+        render json: @todo
+        # redirect_to root_url
+        # render template: '/static_pages/root'
     end
 
     private
